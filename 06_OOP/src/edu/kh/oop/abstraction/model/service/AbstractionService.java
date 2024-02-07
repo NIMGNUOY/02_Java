@@ -1,0 +1,93 @@
+package edu.kh.oop.abstraction.model.service;
+
+import edu.kh.oop.abstraction.model.vo.People;
+
+// Service : 특정 기능(비즈니스 로직)을 제공하는 클래스
+public class AbstractionService {
+	
+	// ctrl + shift + o : 해당 클래스에서 import 안된거 전부 import
+	public void ex1() {
+		// 국민 객체 만들기
+		People p1 = new People();
+		// People p1 : People 객체의 주소를 저장하여 참조하는 변수 p1
+		// People : 사용자 정의 자료형
+		// new People(); : 새로운 People 객체를 Heap 영역에 생성
+
+		// ** 클래스 이름이 자료형처럼 사용된다 **
+		// == 그래서 클래스를  "사용자 정의 자료형"이라고도 한다!! **
+		
+		/*
+		p1.name = "홍길동";
+		p1.gender = '남';
+		p1.pNo = "003456-1234567";
+		p1.address = "서울시 중구 남대문로 120 그레이츠청계 3층 E강의장";
+		p1.phone = "010-7894-7894";
+		p1.age = 25;
+		
+		System.out.println("p1의 name : " + p1.name);
+		System.out.println("p1의 gender : " + p1.gender);
+		System.out.println("p1의 pNo : " + p1.pNo);
+		System.out.println("p1의 address : " + p1.address);
+		System.out.println("p1의 phone : " + p1.phone);
+		System.out.println("p1의 age : " + p1.age);
+		*/
+		
+		
+		p1.setName("홍길동");
+		p1.setGender('남');
+		p1.setpNo("003456-1234567");
+		p1.setAddress("서울시 중구 남대문로 120 그레이츠청계 3층 E강의장");
+		p1.setPhone("010-7894-7894");
+		p1.setAge(25);
+		
+		System.out.println("p1의 name : " + p1.getName());
+		System.out.println("p1의 gender : " + p1.getGender());
+		System.out.println("p1의 pNo : " + p1.getpNo());
+		System.out.println("p1의 address : " + p1.getAddress());
+		System.out.println("p1의 phone : " + p1.getPhone());
+		System.out.println("p1의 age : " + p1.getAge());
+		p1.tax();
+		p1.vote();
+		
+		// 본인 객체
+		People p2 = new People();
+		
+		p2.setName("송영민");
+		p2.setGender('남');
+		p2.setpNo("930407-1234567");
+		p2.setAddress("경기도 구리시 검배로 142 sk신일 아파트");
+		p2.setPhone("010-9246-7636");
+		p2.setAge(32);
+		
+		System.out.println("이름 : " + p2.getName());
+		System.out.println("성별 : " + p2.getGender());
+		System.out.println("주민등록번호 : " + p2.getpNo());
+		System.out.println("주소 : " + p2.getAddress());
+		System.out.println("전화번호 : " + p2.getPhone());
+		System.out.println("나이 : " + p2.getAge());
+		p2.tax();
+		p2.vote();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
