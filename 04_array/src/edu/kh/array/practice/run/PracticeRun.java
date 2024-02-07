@@ -32,7 +32,7 @@ public class PracticeRun {
 		
 		//PS.practice13(); **
 		
-		PS.practice14();
+		//PS.practice14();**
 	}
 
 }

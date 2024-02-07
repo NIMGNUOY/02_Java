@@ -2,9 +2,10 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="edu.kh.control.condition.ConditionExample"/>
     <fullyQualifiedTypeName name="edu.kh.control.practice.ConditionPractice"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="edu.kh.oop.abstraction.model.vo.People"/>
     <fullyQualifiedTypeName name="edu.kh.oop.abstraction.model.service.AbstractionService"/>
     <fullyQualifiedTypeName name="edu.kh.oop.basic.Account"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>

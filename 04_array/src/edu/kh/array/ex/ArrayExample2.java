@@ -125,6 +125,17 @@ public class ArrayExample2 {
 		// 결과 출력
 		System.out.println( Arrays.toString(lotto) );
 	}
+	
+	public void copyPractice() {
+		
+		int[] arr = {100,200,300,400,500};
+		
+		int[] arr_copy = new int[arr.length];
+		System.arraycopy(arr, 0, arr_copy, 1, 4);
+		// 복사배열의 삽입index 번호를 1로 지정하면 0번째 index에는 0 값이 들어간다
+		System.out.println(Arrays.toString(arr_copy));
+		
+	}
 
 }
 

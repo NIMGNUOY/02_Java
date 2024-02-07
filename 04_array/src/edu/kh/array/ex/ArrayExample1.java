@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class ArrayExample1 {
 	
 	/* 배열(Array)
-	 * - 같은 자료형의 변수를 하나의 묶ㅇ음으로 다루는 것.
+	 * - 같은 자료형의 변수를 하나의 묶음으로 다루는 것.
 	 * - 묶여진 변수들은 하나의 배열명으로 불러지고
 	 *   구분은 index를 이용함(index 는 0 부터 시작하는 정수)
 	 */

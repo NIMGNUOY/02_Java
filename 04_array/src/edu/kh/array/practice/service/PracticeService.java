@@ -385,12 +385,18 @@ public class PracticeService {
 			
 			System.out.print("더 입력하고 싶은 개수 : ");
 			int input4 = sc.nextInt();
+			String[] arr_copy = new String[arr.length + input4];
 			
-			for(int i = 1; i <= input4; i++ ) {
-				System.out.printf("%d번째 문자열 : ", count + i);
+			for(int i = 0; i < arr_copy.length; i++ ) {
+				
+				System.out.printf("%d번째 문자열 : ",count + 1);
 				String input5 = sc.next();
-				arr[count] = input5;
-				count ++;
+				
+				if(i < input) {
+					arr_copy[i] = arr[i];
+				} else if (i >= input) {
+					arr_copy[i] = input5;
+				}
 			}
 			
 		}

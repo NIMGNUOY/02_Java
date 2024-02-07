@@ -20,7 +20,8 @@ public class ArrayRun {
 		
 		//arrayEx2.shallowCopy();
 		//arrayEx2.deepCopy();
-		arrayEx2.createLottoNumber();
+		//arrayEx2.createLottoNumber();
+		arrayEx2.copyPractice();
 	}
 
 }
