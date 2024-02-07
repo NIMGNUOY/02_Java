@@ -192,7 +192,210 @@ public class PracticeService {
 		System.out.println(arr);
 		
 	}
+	/*
+	public void practice8() {
+		
+		System.out.print("정수 : ");
+		
+		int input = sc.nextInt();
+		int[] arr = new int[input];
+		boolean flag = false;
+		int num = 1 ;
+		
+		if (input % 2 == 1 && input >= 3) {
+			
+			for (int i = 0; i < arr.length; i++) {
+				
+				if (i <= arr.length / 2 ) {
+					
+					
+					arr[i] = i + num;
+					
+					
+				} else {
+					
+					arr[i] = i - 
+					
+				}
+				
+			}
+			
+			
+		}
+		
+		
+	}
+	*/
 	
+	
+	public void practice9() {
+		
+		int[] arr = new int[10];
+		
+		
+		System.out.print("발생한 난수 : ");
+		
+		for(int i = 0; i < arr.length; i++) {
+			int random = (int)( Math.random() * 10 + 1 );
+			
+			arr[i] = random;
+			System.out.print(arr[i] + " ");
+		}
+		
+	}
+	
+	public void practice10() {
+		
+		int[] arr = new int[10];
+		
+		int max = 0;
+		int min = 10;
+		
+		System.out.print("발생한 난수 : ");
+		
+		for(int i = 0; i < arr.length; i ++) {
+			int random = (int) (Math.random() * 9 + 1);
+			
+			arr[i] = random;
+			System.out.print(arr[i] + " ");
+			
+			
+			if(arr[i] > max) {
+				max = arr[i];
+			} else if (arr[i] < min) {
+				min = arr[i];
+			}
+		}
+		System.out.println();
+		System.out.println("최대값 : " + max);
+		System.out.println("최소값 : " + min);
+	}
+	
+	public void practice11() {
+		
+		int[] arr = new int[10];
+		
+		for(int i = 0; i < arr.length; i++) {
+			
+			int random = (int) (Math.random() *  10 + 1);
+			// 0.0 <= x < 1.0
+			// 0.0 <= x * 9 < 9.0
+			// 1.0 <= x * 9 + 1 < 10.0
+			// 1 <= (int)(x * 9 + 1) < 10
+
+			arr[i] = random;
+		
+			
+			for(int x = 0; x < i; x++) {
+				
+				if (random == arr[x]) {
+					
+					i--;
+					break;
+					
+				}
+			}
+			
+			
+		}
+		System.out.println (Arrays.toString(arr) );
+	}
+	
+	public void practice12() {
+		
+		int[] lotto = new int[6];
+		
+		for(int i = 0; i < lotto.length; i++) {
+			
+			int random = (int) ( Math.random() * 45 + 1);
+			
+			lotto[i] = random;
+			
+			for(int x = 0; x < i; x ++) {
+				
+				if(random == lotto[x]) {
+					
+					i--;
+					break;
+					
+				}
+				
+			}
+			
+		}
+		Arrays.sort(lotto);
+		System.out.println(Arrays.toString(lotto));
+	}
+	
+	public void practice13() {
+		
+		System.out.print("문자열 : ");
+		String input = sc.next();
+		
+		char[] ch = new char[input.length()];
+		int length = input.length();
+		
+		for(int i = 0; i < ch.length; i ++) {
+			
+			ch[i] = input.charAt(i);
+			
+			
+			for(int x = 0; x < i; x ++) {
+				
+				if(input.charAt(i) == ch[x]) {
+					
+					length --;
+					
+					
+					break;
+					
+				}
+				
+			}
+		}
+		System.out.println("문자열에 있는 문자 : " + Arrays.toString(ch));
+		System.out.println("문자 개수 : " + length);
+		
+	}
+	
+	public void practice14() {
+		
+		System.out.print("배열의 크기를 입력하세요 : ");
+		int input = sc.nextInt();
+		
+		String[] arr = new String[input];
+		int count = 0; // 입력 문자열 누적횟수 카운트 변수
+		
+		for(int i = 0; i < arr.length; i++) {
+			
+			System.out.printf("%d번째 문자열 : ", (i + 1)  );
+			
+			String input2 = sc.next();
+			arr[i] = input2 ;
+			count ++;
+		}
+		System.out.println(Arrays.toString(arr));
+		
+		boolean flag = false;
+		
+		System.out.print("더 값을 입력하시겠습니까(Y/N) : ");
+		char input3 = sc.next().charAt(0);
+		
+		if(input3 == 'y') {
+			
+			System.out.print("더 입력하고 싶은 개수 : ");
+			int input4 = sc.nextInt();
+			
+			for(int i = 1; i <= input4; i++ ) {
+				System.out.printf("%d번째 문자열 : ", count + i);
+				String input5 = sc.next();
+				arr[count] = input5;
+				count ++;
+			}
+			
+		}
+		System.out.println(Arrays.toString(arr));
+	}
 }
 
 
