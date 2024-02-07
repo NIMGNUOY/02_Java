@@ -428,10 +428,10 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_DcVHs8S5Ee6RJ6DWHgjLFA" elementId="org.eclipse.ui.editorss" selectedElement="_HXmZQMTkEe62lIwl9assPw">
-      <children xsi:type="basic:PartSashContainer" xmi:id="_HXmZQMTkEe62lIwl9assPw" selectedElement="_HXmZQcTkEe62lIwl9assPw" horizontal="true">
+      <children xsi:type="basic:PartSashContainer" xmi:id="_HXmZQMTkEe62lIwl9assPw" selectedElement="_DcVHw8S5Ee6RJ6DWHgjLFA" horizontal="true">
         <children xsi:type="basic:PartStack" xmi:id="_DcVHw8S5Ee6RJ6DWHgjLFA" elementId="PartStack@3de13efc" containerData="5000" selectedElement="_EV1RYMTkEe62lIwl9assPw">
           <children xsi:type="basic:Part" xmi:id="_EV1RYMTkEe62lIwl9assPw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="PracticeRun.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;PracticeRun.java&quot; partName=&quot;PracticeRun.java&quot; title=&quot;PracticeRun.java&quot; tooltip=&quot;04_array/src/edu/kh/array/practice/run/PracticeRun.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/04_array/src/edu/kh/array/practice/run/PracticeRun.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;366&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;PracticeRun.java&quot; partName=&quot;PracticeRun.java&quot; title=&quot;PracticeRun.java&quot; tooltip=&quot;04_array/src/edu/kh/array/practice/run/PracticeRun.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/04_array/src/edu/kh/array/practice/run/PracticeRun.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;370&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
             <tags>Editor</tags>
             <tags>removeOnHide</tags>
             <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
@@ -439,7 +439,7 @@
         </children>
         <children xsi:type="basic:PartStack" xmi:id="_HXmZQcTkEe62lIwl9assPw" elementId="PartStack@28d78140" containerData="5000" selectedElement="_FiAJkMTkEe62lIwl9assPw">
           <children xsi:type="basic:Part" xmi:id="_FiAJkMTkEe62lIwl9assPw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="PracticeService.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;PracticeService.java&quot; partName=&quot;PracticeService.java&quot; title=&quot;PracticeService.java&quot; tooltip=&quot;04_array/src/edu/kh/array/practice/service/PracticeService.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/04_array/src/edu/kh/array/practice/service/PracticeService.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3094&quot; selectionTopPixel=&quot;3059&quot;/>&#xD;&#xA;&lt;/editor>"/>
+            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;PracticeService.java&quot; partName=&quot;PracticeService.java&quot; title=&quot;PracticeService.java&quot; tooltip=&quot;04_array/src/edu/kh/array/practice/service/PracticeService.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/04_array/src/edu/kh/array/practice/service/PracticeService.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3094&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
             <tags>Editor</tags>
             <tags>removeOnHide</tags>
             <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
@@ -696,7 +696,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DcVt0MS5Ee6RJ6DWHgjLFA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_bT16t8TjEe62lIwl9assPw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_DcXh5sS5Ee6RJ6DWHgjLFA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_XouPoMTqEe6F2YaTSgF2Qg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_DcXh5sS5Ee6RJ6DWHgjLFA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DcVt3cS5Ee6RJ6DWHgjLFA" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -704,8 +704,8 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DcVt38S5Ee6RJ6DWHgjLFA" elementId="org.eclipse.ui.workbench.edit">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_bT16vcTjEe62lIwl9assPw" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_DcW918S5Ee6RJ6DWHgjLFA"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_bT16vsTjEe62lIwl9assPw" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_DcW-fMS5Ee6RJ6DWHgjLFA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_XovdwcTqEe6F2YaTSgF2Qg" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_DcW918S5Ee6RJ6DWHgjLFA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_XowE0MTqEe6F2YaTSgF2Qg" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_DcW-fMS5Ee6RJ6DWHgjLFA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DcVt48S5Ee6RJ6DWHgjLFA" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -738,10 +738,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DcVuR8S5Ee6RJ6DWHgjLFA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_bT16xMTjEe62lIwl9assPw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_DcXhicS5Ee6RJ6DWHgjLFA"/>
-      </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_QJ8OEMTjEe6_KvlWMdP4Mg" elementId="org.eclipse.jdt.ui.CompilationUnitEditor" visible="false">
-        <tags>Draggable</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Xowr4MTqEe6F2YaTSgF2Qg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_DcXhicS5Ee6RJ6DWHgjLFA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DcVuU8S5Ee6RJ6DWHgjLFA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
