@@ -32,8 +32,10 @@ public class Array2Practice {
 		
 		int[][] arr = new int[4][4];
 		int num = 1;
+		int[] row_arr = new int[4];
 		
 		for(int row = 0; row < arr.length; row++) { // 행 반복
+			
 			
 			for(int col = 0; col < arr[row].length; col ++) { // 열 반복
 				
@@ -43,7 +45,8 @@ public class Array2Practice {
 			}
 			
 		}
-		System.out.println(Arrays.deepToString(arr));
+
+		System.out.println(Arrays.toString(row_arr));
 	}
 	
 	public void practice3() {

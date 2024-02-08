@@ -35,9 +35,9 @@ public class PracticeService {
 		int[] arr = new int[9];
 		int sum = 0;
 		
-		for(int i = 8; i >= 0; i --) {
+		for(int i = 0; i < arr.length; i ++) {
 			
-			arr[i] = i + 1;
+			arr[i] = arr.length - i;
 			System.out.print(arr[i] + " ");
 			
 			if(i % 2 == 1 ) {
@@ -192,40 +192,34 @@ public class PracticeService {
 		System.out.println(arr);
 		
 	}
-	/*
+	
 	public void practice8() {
 		
 		System.out.print("정수 : ");
-		
 		int input = sc.nextInt();
+		
 		int[] arr = new int[input];
 		boolean flag = false;
-		int num = 1 ;
-		
-		if (input % 2 == 1 && input >= 3) {
+		/*
+		if(input % 2 == 0 || input < 3) {
 			
-			for (int i = 0; i < arr.length; i++) {
+			System.out.println("다시 입력하세요.");
+			System.out.print("정수 : ");
+			int input2 = sc.nextInt();
+			
+			for(int i = 0; i < arr.length; i++) {
 				
-				if (i <= arr.length / 2 ) {
-					
-					
-					arr[i] = i + num;
-					
-					
-				} else {
-					
-					arr[i] = i - 
-					
-				}
+				
 				
 			}
 			
-			
 		}
+		*/
+		
 		
 		
 	}
-	*/
+	
 	
 	
 	public void practice9() {
