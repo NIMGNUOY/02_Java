@@ -195,30 +195,45 @@ public class PracticeService {
 	
 	public void practice8() {
 		
-		System.out.print("정수 : ");
-		int input = sc.nextInt();
-		
-		int[] arr = new int[input];
-		boolean flag = false;
-		/*
-		if(input % 2 == 0 || input < 3) {
+		while (true) {  // break 가 나오기전까지 계속 반복하는 구문
 			
-			System.out.println("다시 입력하세요.");
 			System.out.print("정수 : ");
-			int input2 = sc.nextInt();
+			int input = sc.nextInt();
 			
-			for(int i = 0; i < arr.length; i++) {
+			if(input % 2 == 0 || input < 3) {  // 이 조건에 true 일 경우 다시 while 반복문으로 돌아감
+				System.out.println("다시 입력하세요.");
+			} else {
 				
+				int[] arr = new int[input];
+				int num = 0; // 배열 arr에 대입될 값 변수
 				
-				
+				for(int i = 0; i < arr.length; i ++) {
+					
+					if(i <= input / 2 ) {
+						arr[i] = ++num;  // 전위 연산자로 먼저 + 1 를 해줌
+						
+					} else {
+						arr[i] = --num;  // 전위 연산자로 먼저 - 1 를 해줌
+					}
+					
+					if(i == arr.length - 1) {
+						System.out.print(arr[i]);
+					} else {
+						System.out.print(arr[i] + ", ");
+					}
+					
+				}
+				break; // while 반복 멈춤 
 			}
 			
-		}
-		*/
+		}		
+			
+			
+}
 		
 		
 		
-	}
+
 	
 	
 	
@@ -327,28 +342,34 @@ public class PracticeService {
 		String input = sc.next();
 		
 		char[] ch = new char[input.length()];
-		int length = input.length();
+		
 		
 		for(int i = 0; i < ch.length; i ++) {
 			
 			ch[i] = input.charAt(i);
+		}
+		System.out.print("문자열에 있는 문자 : ");
+		int num = 0;
+		for(int i = 0; i < ch.length; i ++) {
+			boolean flag = true;
 			
-			
-			for(int x = 0; x < i; x ++) {
-				
-				if(input.charAt(i) == ch[x]) {
-					
-					length --;
-					
-					
+			for(int j = 0; j < i; j ++) {
+				if(ch[i] == ch[j]) { // 앞에 한번 나왔던 문자가 다시 나올경우 아무 출력도 하지 않고
+					flag = false;    // flag 변수만 false 로 변환
 					break;
-					
 				}
-				
+			}
+			if(flag) {
+				if(i == 0) {
+					System.out.print(ch[i]);
+				} else {
+					System.out.print(", " + ch[i]);
+				}
+				num++;
 			}
 		}
-		System.out.println("문자열에 있는 문자 : " + Arrays.toString(ch));
-		System.out.println("문자 개수 : " + length);
+		System.out.println();
+		System.out.println("문자 개수 : " + num);
 		
 	}
 	
@@ -360,7 +381,7 @@ public class PracticeService {
 		String[] arr = new String[input];
 		int count = 0; // 입력 문자열 누적횟수 카운트 변수
 		
-		for(int i = 0; i < arr.length; i++) {
+		for(int i = 0; i < arr.length; i++) { // 처음 입력된 문자열은 반복문에 넣지 않음
 			
 			System.out.printf("%d번째 문자열 : ", (i + 1)  );
 			
@@ -368,33 +389,42 @@ public class PracticeService {
 			arr[i] = input2 ;
 			count ++;
 		}
-		System.out.println(Arrays.toString(arr));
 		
-		boolean flag = false;
 		
-		System.out.print("더 값을 입력하시겠습니까(Y/N) : ");
-		char input3 = sc.next().charAt(0);
-		
-		if(input3 == 'y') {
+		while (true) {   // 값입력 무한루프
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			char answer1 = sc.next().charAt(0);
 			
-			System.out.print("더 입력하고 싶은 개수 : ");
-			int input4 = sc.nextInt();
-			String[] arr_copy = new String[arr.length + input4];
-			
-			for(int i = 0; i < arr_copy.length; i++ ) {
+			if(answer1 == 'y' || answer1 == 'Y') {
 				
-				System.out.printf("%d번째 문자열 : ",count + 1);
-				String input5 = sc.next();
+				System.out.print("더 입력하고 싶은 개수 : ");
+				int answer2 = sc.nextInt();
+				String[] new_arr = new String[arr.length + answer2];
 				
-				if(i < input) {
-					arr_copy[i] = arr[i];
-				} else if (i >= input) {
-					arr_copy[i] = input5;
+				for(int i = 0; i < arr.length; i ++) { // new_arr 의 arr.length - 1 번째 까지의 배열값은
+					new_arr[i] = arr[i];				// arr 배열값과 같게 함
 				}
-			}
+				
+				for(int i = 0; i < answer2; i++) {
+					count++;
+					System.out.printf("%d번째 문자열 : " , count);
+					String input3 = sc.next();
+					
+					new_arr[count - 1] = input3;  // 입력문자열 누적 횟수에서 1를 빼서 배열번호를 맞추고
+												  // arr.length 번째부터의 배열값에는 입력값을 출력하도록
+				}
+				arr = new_arr;
 			
+			
+			} else if(answer1 == 'n' || answer1 =='N' ) {
+				System.out.println(Arrays.toString(arr));
+				break;
+			} else {
+				System.out.println("잘못 입력하셨습니다 다시 입력해주세요");
+			}
 		}
-		System.out.println(Arrays.toString(arr));
+		
+		
 	}
 }
 

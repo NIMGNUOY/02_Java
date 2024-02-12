@@ -7,9 +7,12 @@ public class PracticeRun {
 		Array2Practice ap = new Array2Practice();
 		
 		//ap.practice1();
-		ap.practice2();   // 개행 하는 법
-		//ap.practice3();   // 개행 하는 법
-		//ap.practice4();
+		//ap.practice2(); 
+		//ap.practice3();   
+		//ap.practice4();  // 마지막 총합 질문하기
+		//ap.practice5();
+		//ap.practice6();
+		
 	}
 	
 }
