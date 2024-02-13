@@ -11,7 +11,7 @@ public class PracticeRun {
 		//ap.practice3();   
 		//ap.practice4();  // 마지막 총합 질문하기
 		//ap.practice5();
-		//ap.practice6();
+		ap.practice6();
 		
 	}
 	

@@ -42,16 +42,9 @@ public class Array2Practice {
 				num++;
 				
 				
-				if(col  == 0 ) {
-					System.out.printf("%3d " , arr[row][col]);
-				} else if (col % 3 == 0) {
-					System.out.printf("%3d\n", arr[row][col]);
-				} else {
-					System.out.printf("%3d", arr[row][col]);
-				}
-				
+				System.out.printf("%3d", arr[row][col]);
 			}
-			
+			System.out.println();
 		}
 
 
@@ -69,16 +62,10 @@ public class Array2Practice {
 				arr[row][col] = num;
 				num--;
 				
-				if(col == 0) {
-					System.out.printf("%3d", arr[row][col]);
-				} else if (col % 3 == 0) {
-					System.out.printf("%3d\n", arr[row][col]);
-				} else {
-					System.out.printf("%3d", arr[row][col]);
-				}
+				System.out.printf("%3d", arr[row][col]);
 				
 			}
-			
+			System.out.println();
 		}
 		
 		
@@ -141,6 +128,7 @@ public class Array2Practice {
 			
 			if(rowIndex < 1 || rowIndex > 10 || colIndex < 1 || colIndex > 10) {
 				System.out.println("반드시 1~10 사이의 정수를 입력해야 합니다.");
+				continue;
 			} else {
 				
 				char[][] arr = new char[rowIndex][colIndex];
@@ -149,11 +137,11 @@ public class Array2Practice {
 					
 					for(int col = 0; col < arr[row].length; col++) {
 						
-						arr[row][col] = (char) (Math.random() * 26 + 65);
+						arr[row][col] = (char) (Math.random() * 26 + 65); // A ~ Z 는 65 ~ 90
 					}
 				}
 				
-				for(int row = 0; row < arr.length; row ++) {
+				for(int row = 0; row < arr.length; row ++) {  // 출력문
 					for(int col = 0; col < arr[row].length; col++) {
 						System.out.printf("%2c", arr[row][col]);
 					}

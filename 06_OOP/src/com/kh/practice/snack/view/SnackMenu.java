@@ -8,9 +8,35 @@ public class SnackMenu {
 
 	private Scanner sc = new Scanner(System.in);
 	private SnackController scr = new SnackController();
+		
 	
+	public void menu() {
+		
+		System.out.print("종류 : ");
+		String kindInput = sc.next();
+		
+		System.out.print("이름 : ");
+		String nameInput = sc.next();
+		
+		System.out.print("맛 : ");
+		String flavorInput = sc.next();
+		
+		System.out.print("개수 : ");
+		int numOfInput = sc.nextInt();
+		
+		System.out.print("가격 : ");
+		int priceInput = sc.nextInt();
+		
+		scr.saveData(kindInput, nameInput, flavorInput, numOfInput, priceInput);
+		
+		System.out.print("저장한 정보를 확인하시겠습니까?(y/n) : ");
+		char chInput = sc.next().charAt(0);
+		
+		if(chInput == 'y' || chInput == 'Y') {
+			
+		}
+	}
+		
 	
-	
-	
-	public void menu() {}
 }
+
