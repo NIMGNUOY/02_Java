@@ -77,6 +77,7 @@ public class Array2Example {
 		
 		// Arrays.toString(배열명) : 참조하고 있는 1차원 배열 값을 문자열로 반환
 		System.out.println("Arrays.toString() : " + Arrays.toString(arr) );
+		// --> 배열 arr 이 참조하는 주소값을 출력 : Arrays.toString() : [[I@626b2d4a, [I@5e91993f]
 		
 		// Arrays.deepToString(배열명)
 		// -> 참조하고 있는 배열의 데이터가 나오는 부분까지 파고 들어가서

@@ -16,7 +16,11 @@ public class Snack {
 		this.flavor = flavor;
 		this.numOf = numOf;
 		this.price = price;
-	}   // 매개변수 생성자
+	}   // 매개변수 생성자 --> 필드 모두 초기화
+	
+	public String information() {
+		return "";
+	}
 	
 	
 

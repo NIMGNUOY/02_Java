@@ -97,7 +97,7 @@ public class PracticeService {
 					
 					seat = 1;
 					row = i + 1;
-					direction = j == 0 ? "왼쪽" : "오른쪽" ;
+					direction = j == 0 ? "왼쪽" : "오른쪽" ; // 삼항연산자
 				}
 			}
 		}
@@ -118,7 +118,7 @@ public class PracticeService {
 		if (seat != 0) {   // 검색값과 일치한 학생이 있는 경우
 			System.out.printf("검색하신 %s 학생은 %d분단 %d번째 줄 %s에 있습니다.\n", name, seat, row, direction);
 		} else if (seat == 0) {  // 검색값과 일치한 학생이 없는 경우
-			System.out.println("검색하신 학생은 없습니다. 다시 검색해주세요.");
+			System.out.println("검색하신 학생은 없습니다.");
 		}
 	}	
 	
@@ -158,7 +158,8 @@ public class PracticeService {
 			if(colIdx < 0 || colIdx > 4) {
 				System.out.println("0 ~ 4 사이의 값을 입력해주세요.");
 				continue;
-			} 
+			} // 조건이 충족되면 프린트 수행후 continue 를 통해 반복문의 처음으로 
+			  // 조건이 충족되지 않으면 break 를 통해 반복문 종료.
 			break;
 		}
 		
@@ -167,10 +168,10 @@ public class PracticeService {
 			for(int col = 0 ; col < arr[row].length ; col++) {
 				
 				if(row == rowIdx && col == colIdx) {
-					arr[row +1][col +1] = "X ";
+					arr[row +1][col +1] = "X ";  // 0행 과 0열은 index 행열 이기 때문에 + 1 로 위치를 맞춤
 				}
 				
-				if(arr[row][col] == null) {
+				if(arr[row][col] == null) {  // null 표시를 없애기 위해 "  "; 를 대입해 빈칸으로
 					arr[row][col] = "  ";
 				}
 				System.out.print(arr[row][col]);
@@ -256,8 +257,8 @@ public class PracticeService {
 				if (rowIdx == 99) {
 					flag = true;   // 행 인덱스 값 99 일때 true 전환
 					System.out.println("프로그램 종료");
-				} else if(rowIdx < 0 || rowIdx > 4) {
-					
+				} else if(rowIdx < 0 || rowIdx > 4) {  // 이 조건이 처음에 있으면 99값이 입력됐을 때 조건에 충족되서
+													   // 이 조건문의 결과가 먼저 출력되므로 뒤에 써줘야 함.
 					System.out.println("0 ~ 4 사이의 값을 입력해주세요");
 					continue;
 				}

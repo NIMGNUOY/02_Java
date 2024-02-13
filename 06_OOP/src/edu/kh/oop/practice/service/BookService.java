@@ -7,7 +7,7 @@ public class BookService {
 	public void practice() {
 		
 		Book bInfo1 = new Book();
-		Book bInfo2 = new Book("자바의정석", 30000, 02, "남궁성");
+		Book bInfo2 = new Book("자바의정석", 30000, 0.2, "남궁성");
 		System.out.println(bInfo1.toString());
 		System.out.println(bInfo2.toString());
 		System.out.println("========================================");
