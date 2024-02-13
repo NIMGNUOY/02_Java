@@ -10,7 +10,7 @@ public class PracticeRun {
 		
 		//ps.practice7();
 		//ps.practice8();
-		//ps.practice9();    //continue 질문하기 , 다시 풀어보기
+		//ps.practice9();    //continue 질문하기
 		ps.practice10();
 	}
 	
