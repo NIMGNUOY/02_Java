@@ -173,15 +173,22 @@ public class EmployeeService {
 	// (동일한 급여인 경우 사번이 낮은 사람이 출력)
 	public void topSalaryEmployee() {
 	
+		int max = 0;
+		int num = 0;
 		
-		int max = employees[0].getSalary();
 		
 		for(int i = 0; i < employees.length; i++) {
 			
-			if(employees[i].getSalary() > max) {
+			
+			if(employees[i].getSalary() >= max) {
 				
 				max = employees[i].getSalary();
 				
+				if(employees[i].getSalary() == max) {
+					
+					
+					
+				}
 			} 
 			
 		}
