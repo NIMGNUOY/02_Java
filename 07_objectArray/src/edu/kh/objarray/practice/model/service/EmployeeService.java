@@ -173,25 +173,28 @@ public class EmployeeService {
 	// (동일한 급여인 경우 사번이 낮은 사람이 출력)
 	public void topSalaryEmployee() {
 	
-		int max = 0;
-		int num = 0;
+		Employee maxEmp = employees[0];		// 자료형 Employee 을 가진 변수 maxEmp 를 만들어
+											// 배열 employees 첫번째 값을 대입한다
 		
-		
-		for(int i = 0; i < employees.length; i++) {
+		for(int i = 0; i < employees.length; i ++) {
 			
-			
-			if(employees[i].getSalary() >= max) {
+			if(maxEmp.getSalary() < employees[i].getSalary()) {
 				
-				max = employees[i].getSalary();
+				maxEmp = employees[i];
 				
-				if(employees[i].getSalary() == max) {
+				
+			} else if (maxEmp.getSalary() == employees[i].getSalary()) {	// 급여가 같은 경우
+				
+				if(maxEmp.geteNum() > employees[i].geteNum()) {				// 사번이 낮은 사원
 					
-					
-					
+					maxEmp = employees[i];
 				}
-			} 
+			}
 			
 		}
+		
+		System.out.printf("이름 : %s, 부서 : %s, 급여 : %d\n", 
+				maxEmp.geteName(), maxEmp.geteDept(), maxEmp.getSalary());
 		
 		
 	}

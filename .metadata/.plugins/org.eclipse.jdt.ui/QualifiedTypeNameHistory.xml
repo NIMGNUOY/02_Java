@@ -2,14 +2,12 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="edu.kh.oarr.model.vo.Member"/>
     <fullyQualifiedTypeName name="edu.kh.oarr.model.service.MemberService"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="com.hw3.model.vo.Product"/>
     <fullyQualifiedTypeName name="com.hw3.model.vo.Product2"/>
     <fullyQualifiedTypeName name="com.hw3.controller.ProductController"/>
     <fullyQualifiedTypeName name="com.hw3.controller.ProductController2"/>
     <fullyQualifiedTypeName name="edu.kh.objarray.practice.model.vo.Employee"/>
     <fullyQualifiedTypeName name="edu.kh.objarray.practice.model.service.EmployeeService"/>
-    <fullyQualifiedTypeName name="com.hw4.model.vo.Member"/>
     <fullyQualifiedTypeName name="com.hw4.controller.MemberController"/>
     <fullyQualifiedTypeName name="com.hw4.view.MemberMenu"/>
     <fullyQualifiedTypeName name="edu.kh.inheritance.model.dto.Person"/>
@@ -42,4 +40,7 @@
     <fullyQualifiedTypeName name="com.hw2.model.service.Prison"/>
     <fullyQualifiedTypeName name="com.hw2.model.service.ManagementSystem"/>
     <fullyQualifiedTypeName name="com.hw2.model.dto.Employee"/>
+    <fullyQualifiedTypeName name="com.hw4.model.vo.Member"/>
+    <fullyQualifiedTypeName name="javax.annotation.processing.AbstractProcessor"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>

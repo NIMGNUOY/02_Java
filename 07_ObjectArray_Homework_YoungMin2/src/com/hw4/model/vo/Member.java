@@ -25,7 +25,8 @@ public class Member {
 	}
 	
 	public String information() {
-		return "";
+		return "아이디 : " + userId + ", 이름 : " + name + ", 나이 : " + age + ", 성별 : " + gender +
+				", 이메일 : " + email;
 	}
 
 	public String getUserId() {
