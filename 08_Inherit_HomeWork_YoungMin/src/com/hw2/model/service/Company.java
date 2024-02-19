@@ -7,7 +7,7 @@ public class Company implements ManagementSystem{
 
 	private Employee[] employee = null;		// 전체 직원 저장용
 	
-	private int employeeCount = 0;			// 직원수
+	private int employeeCount;			// 직원수
 	
 	public Company(int size) {
 		employee = new Employee[size];

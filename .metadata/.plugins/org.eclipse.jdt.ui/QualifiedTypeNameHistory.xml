@@ -18,7 +18,6 @@
     <fullyQualifiedTypeName name="com.kh.inheritance.model.dto.SmartPhone"/>
     <fullyQualifiedTypeName name="com.hw1.model.vo.Student"/>
     <fullyQualifiedTypeName name="com.hw1.model.vo.Employee"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="edu.kh.poly.ex1.model.vo.Car"/>
     <fullyQualifiedTypeName name="edu.kh.poly.ex1.model.vo.Tesla"/>
     <fullyQualifiedTypeName name="edu.kh.poly.ex1.model.vo.Spark"/>
@@ -43,4 +42,13 @@
     <fullyQualifiedTypeName name="com.hw4.model.vo.Member"/>
     <fullyQualifiedTypeName name="javax.annotation.processing.AbstractProcessor"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="edu.kh.exception.model.service.ExceptionService"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="edu.kh.collection.model.service.StudentService"/>
+    <fullyQualifiedTypeName name="edu.kh.collection.model.vo.Student"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
 </qualifiedTypeNameHistroy>
