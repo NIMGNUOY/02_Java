@@ -34,9 +34,6 @@
     <fullyQualifiedTypeName name="com.hw1.model.dto.Poetry"/>
     <fullyQualifiedTypeName name="com.hw1.model.dto.Book"/>
     <fullyQualifiedTypeName name="com.hw2.model.dto.Person"/>
-    <fullyQualifiedTypeName name="com.hw2.model.dto.Prisoner"/>
-    <fullyQualifiedTypeName name="com.hw2.model.service.Company"/>
-    <fullyQualifiedTypeName name="com.hw2.model.service.Prison"/>
     <fullyQualifiedTypeName name="com.hw2.model.service.ManagementSystem"/>
     <fullyQualifiedTypeName name="com.hw2.model.dto.Employee"/>
     <fullyQualifiedTypeName name="com.hw4.model.vo.Member"/>
@@ -51,4 +48,7 @@
     <fullyQualifiedTypeName name="edu.kh.collection.model.service.StudentService"/>
     <fullyQualifiedTypeName name="edu.kh.collection.model.vo.Student"/>
     <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="com.hw2.model.service.Prison"/>
+    <fullyQualifiedTypeName name="com.hw2.model.dto.Prisoner"/>
+    <fullyQualifiedTypeName name="com.hw2.model.service.Company"/>
 </qualifiedTypeNameHistroy>

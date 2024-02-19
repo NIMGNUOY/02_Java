@@ -104,7 +104,7 @@ public class StudentService {
 			System.out.print("메뉴 번호 선택 : ");
 			
 			try {
-				
+				// 예외 발생 가능한 코드 입력
 				menuNum = sc.nextInt();
 				System.out.println();
 				

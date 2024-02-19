@@ -17,15 +17,13 @@ public class Company implements ManagementSystem{
 	@Override
 	public void addPerson(Person person) {
 	
-		for(int i = 0; i < employee.length; i ++) {
+		if(person instanceof Employee && employeeCount < employee.length) {
 			
-			if(person instanceof Employee && employee[i] == null) {
-				employee[i] = new Employee();
-				employeeCount++;
-				System.out.println("직원이 추가되었습니다 - " +  employee[i].getInfo() );
-			} else if (employee[i] != null) {
-				System.out.println("인원이 모두 충원되었습니다.");
-			}
+			employee[employeeCount++] = (Employee) person;
+			System.out.println( "직원이 추가되었습니다." + person.getInfo() );
+			
+		} else {
+			System.out.println("인원이 모두 충원되어 더 이상 인원을 추가할 수 없습니다.");
 		}
 		
 	}
@@ -33,17 +31,24 @@ public class Company implements ManagementSystem{
 	@Override
 	public void removePerson(String id) {
 		
-		for(int i = 0; i < employee.length; i ++) {
+		for(int i = 0; i < employeeCount; i ++) {
 			
 			if(employee[i].getId().equals(id)) {
-				employeeCount--;
-				for(int j = 0; j < employee.length; j++) {
-					employee[i] = employee[j];
+				
+				System.out.println( "직원이 삭제되었습니다." + employee[i].getInfo() );
+				employee[i] = null;
+				
+				for(int j = i; j < employeeCount - 1; j ++) {
+					
+					employee[j] = employee[j + 1];
 				}
-			} else {
-				System.out.println("해당 id를 가진 직원을 찾을 수 없습니다.");
+				
+				employee[--employeeCount] = null;
+				return;
 			}
+				
 		}
+		System.out.println("ID : " + id + "인 직원을 찾을 수 없습니다.");
 		
 	}
 
@@ -51,7 +56,7 @@ public class Company implements ManagementSystem{
 	public void displayAllPersons() {
 		
 		System.out.println("전체 직원 명단 : ");
-		for (int i = 0; i < employee.length; i++) {
+		for (int i = 0; i < employeeCount; i++) {
 			System.out.println( employee[i].getInfo() );
 		}
 		

@@ -18,15 +18,13 @@ public class Prison implements ManagementSystem{
 	@Override
 	public void addPerson(Person person) {
 		
-		for(int i = 0; i < prisoners.length; i ++) {
+		if( person instanceof Prisoner && prisonerCount < prisoners.length) {
 			
-			if(person instanceof Employee && prisoners[i] == null) {
-				prisoners[i] = new Prisoner();
-				prisonerCount++;
-				System.out.println("수감자가 추가되었습니다 - " +  prisoners[i].getInfo() );
-			} else if (prisoners[i] != null) {
-				System.out.println("인원이 모두 충원되었습니다.");
-			}
+			System.out.println( "수감자가 추가되었습니다." + person.getInfo() );
+			prisoners[prisonerCount++] = (Prisoner) person;
+		} else {
+			System.out.println("인원이 모두 충원되어 더 이상 인원을 추가할 수 없습니다.");
+			
 		}
 		
 	}
@@ -34,16 +32,22 @@ public class Prison implements ManagementSystem{
 	@Override
 	public void removePerson(String id) {
 		
-		for(int i = 0; i < prisoners.length; i ++) {
+		for(int i = 0; i < prisonerCount; i ++) {
 			
 			if(prisoners[i].getId().equals(id)) {
-				prisonerCount--;
-				for(int j = 0; j < prisoners.length; j++) {
-					prisoners[i] = prisoners[j];
+				
+				System.out.println( "수감자가 삭제되었습니다." + prisoners[i].getInfo() );
+				prisoners[i] = null;
+				
+				for(int j = i; j < prisonerCount - 1; j ++) {
+					
+					prisoners[j] = prisoners[j + 1];
 				}
-			} else {
-				System.out.println("해당 id를 가진 수감자를 찾을 수 없습니다.");
+				prisoners[--prisonerCount] = null;
+				return;
 			}
+			
+			System.out.println("ID : " + id + "인 수감자를 찾을 수 없습니다.");
 		}
 		
 	}
@@ -52,7 +56,7 @@ public class Prison implements ManagementSystem{
 	public void displayAllPersons() {
 		
 		System.out.println("전체 수감자 명단 : ");
-		for (int i = 0; i < prisoners.length; i++) {
+		for (int i = 0; i < prisonerCount; i++) {
 			System.out.println( prisoners[i].getInfo() );
 		}
 		
