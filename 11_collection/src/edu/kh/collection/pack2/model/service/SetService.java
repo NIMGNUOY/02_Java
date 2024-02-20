@@ -140,7 +140,7 @@ public class SetService {
 		System.out.println("[List로 변환]");
 		
 		// Set 에 저장된 객체를 이용해서 List 를 생성
-		List<String> list = new ArrayList<String>(set);
+		List<String> list = new ArrayList<String>( set );
 		
 		// 일반 for 문 (List 화 되었기 때문에)
 		for(int i = 0; i < list.size(); i++) {
@@ -173,7 +173,7 @@ public class SetService {
 		Set<Person> personSet = new HashSet<Person>();
 		
 		personSet.add(p1);
-		personSet.add(p2);
+		personSet.add(p2);	// hashCode() 오버라이딩으로 인해 식별코드 중복으로 덮어씀
 		personSet.add(p3);
 		personSet.add(p4);
 		
