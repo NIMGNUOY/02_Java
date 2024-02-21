@@ -63,9 +63,9 @@ public class ToyFactory {
 				case 3 : deleteToy(); break;
 				case 4 : sortByDate(); break;
 				case 5 : break;
-				case 6 : break;
-				case 7 : break;
-				case 0 : break;
+				case 6 : addIngredient(); break;
+				case 7 : deleteIngre(); break;
+				case 0 :  break;
 				default : System.out.println("메뉴 목록에 있는 번호를 입력해주세요."); 
 				
 				}
@@ -178,10 +178,100 @@ public class ToyFactory {
 	
 	public void sortByDate() {
 		
+		Set<Toy> sortSet = new TreeSet<Toy>(toyList);
+		
+		for(Toy sort : sortSet) {
+			System.out.println( sort );
+		}
+		
+		
+	}
+	
+	public void sortByAge() {
 		
 		
 		
 	}
+	
+	public void addIngredient() throws InputMismatchException {
+		
+		System.out.println("<재료 추가>");
+		System.out.println("=== 현재 등록된 재료 ===");
+		
+		Set<Integer> key = ingreName.keySet();	// ingreName 의 키값 반환
+		
+		for(Integer list : key) {	
+			System.out.println(list + " : " + ingreName.get(list) );
+		}
+		
+		System.out.println("========================");
+		
+		System.out.print("재료 고유번호(key) 입력 : ");
+		int keyNum = sc.nextInt();
+		
+		System.out.print("재료명 입력 : ");
+		String addIngre = sc.next();
+		
+		boolean flag = false;
+		
+		// 고유번호 중복 확인
+		for(Integer list : key) {
+			
+			if(list == keyNum) {
+				flag = true;
+				System.out.println("이미 해당 키에 재료가 등록되어 있습니다.");
+				System.out.print("덮어쓰시겠습니까?(y/n) : ");
+				char answer = sc.next().toUpperCase().charAt(0);
+				
+				if( answer == 'Y' ) {
+					
+					ingreName.put(keyNum, addIngre);
+					
+					System.out.println("새로운 재료가 성공적으로 등록되었습니다.");
+				} else {
+					System.out.println("덮어쓰기를 취소하였습니다.");
+				}
+			} 
+			
+		}
+		if(!flag) {
+			ingreName.put(keyNum, addIngre);
+			System.out.println("새로운 재료가 성공적으로 등록되었습니다.");
+		}
+		
+	}
+	
+	public void deleteIngre() {
+		
+		System.out.println("<재료 삭제>");
+		System.out.println("=== 현재 등록된 재료 ===");
+		
+		Set<Integer> key = ingreName.keySet();
+		
+		for(Integer list : key) {
+			System.out.println(list + " : " + ingreName.get(list));
+		}
+		System.out.println("=========================");
+		
+		System.out.print("삭제할 재료명 입력 : ");
+		String name = sc.next();
+		
+		
+		boolean flag = false;
+		
+		for(int i = 1; i <= ingreName.size(); i ++) {
+			
+			if(ingreName.get(i).equals(name)) {
+				flag = true;
+				System.out.println("재료 '" + ingreName.get(i) + "'이/가 성공적으로 제거되었습니다.");
+				ingreName.remove(i);
+			} 
+		}
+		if(!flag) {
+			System.out.println("해당 이름의 재료가 존재하지 않습니다.");
+		}
+	}
+	
 }
 
 

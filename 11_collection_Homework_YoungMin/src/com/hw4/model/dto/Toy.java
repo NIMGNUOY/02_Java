@@ -1,5 +1,6 @@
 package com.hw4.model.dto;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
@@ -7,7 +8,7 @@ import java.util.Set;
 
 import com.hw4.model.service.ToyFactory;
 
-public  class Toy implements Comparable {
+public  class Toy implements Comparable<Toy> {
 
 	private String name;
 	private int useAge;
@@ -101,11 +102,13 @@ public  class Toy implements Comparable {
 	}
 
 	@Override
-	public int compareTo(Object o) {
+	public int compareTo(Toy toy) {
 		
-		return 0;
+		return this.date - toy.date;
+		// return (this.date - toy.date) * -1   --> 내림차순 정렬을 위해 음수로 만듬
 	}
 
+	
 
 }
 
