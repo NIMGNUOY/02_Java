@@ -304,7 +304,7 @@ public class SetService {
 			// 반복마다 TreeSet 객체 생성
 			// 오름차순 정렬, 중복제거
 			
-			while( lotto.size() < 6 ) {
+			while( lotto.size() < 6 ) {	// lotto.size() 가 0 ~ 5 동안 반복
 				
 				lotto.add( random.nextInt(45) + 1 );
 				
