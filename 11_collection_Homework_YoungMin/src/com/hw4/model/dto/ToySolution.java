@@ -3,7 +3,7 @@ package com.hw4.model.dto;
 import java.util.Objects;
 import java.util.Set;
 
-public class Toy {
+public class ToySolution {
 
 	private String name;
 	private int age;
@@ -11,10 +11,12 @@ public class Toy {
 	private String color;
 	private String manufactureDate;
 	private Set<String> materials;
-	
-	public Toy() {}
 
-	public Toy(String name, int age, int price, String color, String manufactureDate, Set<String> materials) {
+	public ToySolution() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public ToySolution(String name, int age, int price, String color, String manufactureDate, Set<String> materials) {
 		super();
 		this.name = name;
 		this.age = age;
@@ -64,12 +66,41 @@ public class Toy {
 		this.manufactureDate = manufactureDate;
 	}
 
-	public Set<String> getMaterial() {
+	public Set<String> getMaterials() {
 		return materials;
 	}
 
-	public void setMaterial(Set<String> material) {
-		this.materials = material;
+	public void setMaterials(Set<String> materials) {
+		this.materials = materials;
+	}
+
+	// materials 안에 있는 모든 재료를 문자열 형태로 만들어 반환하는 메서드
+	public String getMaterialsAsString() {
+		
+		StringBuilder sb = new StringBuilder();		// 가변성
+		
+		for(String material : materials) {
+			sb.append(material).append(", ");
+		}
+		// ex) [고무, 플라스틱, ] --> sb.length() = 10
+		
+		// 마지막 쉼표와 공백 제거하기
+		if(sb.length() > 0) {	// sb.length() > 0 이란 말은 sb 객체내에 값이 있다라는 뜻으로
+								// 객첵 내 값 + ", " 인 상태 이므로
+								// setLength() 메서드를 사용하여 마지막 문자 2개만큼의 길이를
+								// 줄여 쉼표와 공백을 없앤다.
+			sb.setLength(sb.length() - 2);
+		}
+		
+		return sb.toString();
+		
+	}
+	
+	
+	@Override
+	public String toString() {
+		return String.format("이름 : %s / 가격 : %d / 색상 : %s / 사용가능연령 : %d / 제조년월일 : %s / 재료 : %s",
+				name, price, color, age, manufactureDate, getMaterialsAsString());
 	}
 
 	@Override
@@ -85,43 +116,30 @@ public class Toy {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Toy other = (Toy) obj;
+		ToySolution other = (ToySolution) obj;
 		return age == other.age && Objects.equals(color, other.color)
 				&& Objects.equals(manufactureDate, other.manufactureDate) && Objects.equals(materials, other.materials)
 				&& Objects.equals(name, other.name) && price == other.price;
 	}
-
-	@Override
-	public String toString() {
-		return String.format("이름 : %s / 가격 : %d / 색상 : %s / 사용가능연령 : %d / 제조년월일 : %s / 재료 : %s", 
-							name, price, color, age, manufactureDate, materials() );
-	}
 	
 	
-	public String materials() {
-		
-		StringBuilder sb = new StringBuilder();
-		
-		for(String material : materials) {	// materials 의 자료형은 Set<String> 이기 때문에 배열형식(?)
-			
-			sb.append(material).append(", ");
-		}
-		
-		if(sb.length() > 0) {
-			
-			sb.setLength(sb.length() - 2);
-			
-		}
-		
-		return sb.toString();
-	}
-
+	
 }
 
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
