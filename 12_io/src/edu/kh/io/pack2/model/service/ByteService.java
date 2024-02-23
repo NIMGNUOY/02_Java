@@ -75,7 +75,7 @@ public class ByteService {
 			sb.append("공부해야되는데");
 			sb.append("화이팅");
 			
-			// StringBuilder -> String 변환
+			// StringBuilder -> String 변환 : StringBuilder.toString()
 			String content = sb.toString();
 			
 			// *** 출력방법 1 : 한 글자(2byte) 씩 파일로 출력 ***
@@ -197,6 +197,7 @@ public class ByteService {
 			long startTime = System.nanoTime();
 			
 			bos.write(content.getBytes());
+			// getBytes() : String(문자열)을 byte 배열로 반환해줌.
 			
 			long endTime = System.nanoTime();
 			

@@ -1,7 +1,10 @@
 package com.hw4.model.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
@@ -40,11 +43,169 @@ public class ToyFactory {
 	}
 	
 	{
-//		toySet.add( new Toy("마미롱레그", 8, 36000, "분홍색", "19950805", materials()) );
-//		toySet.add( new Toy("허기워기", 5, 12000, "파란색", "19950805", materials()) );
-//		toySet.add( new Toy("키시미시", 5, 15000, "분홍색", "19950805", materials()) );
-//		toySet.add( new Toy("캣냅", 8, 27000, "보라색", "19950805", materials()) );
-//		toySet.add( new Toy("파피", 12, 57000, "빨간색", "19950805", materials()) );
+		toySet.add( new Toy("마미롱레그", 8, 36000, "분홍색", "19950805", addMaterials(1, 4)) );
+		toySet.add( new Toy("허기워기", 5, 12000, "파란색", "19940312", addMaterials(1, 2)) );
+		toySet.add( new Toy("키시미시", 5, 15000, "분홍색", "19940505", addMaterials(1, 2)) );
+		toySet.add( new Toy("캣냅", 8, 27000, "보라색", "19960128", addMaterials(1, 2)) );
+		toySet.add( new Toy("파피", 12, 57000, "빨간색", "19931225", addMaterials(1, 2, 4)) );
+	}
+	//****************************** 중요 ************************************
+	public Set<String> addMaterials(Integer...newMaterial){
+		
+		Set<String> materials = new HashSet<String>();
+		
+		for(Integer materialKey : newMaterial) {
+			
+			String materialList = materialName.get(materialKey);
+			
+			materials.add(materialList);
+			
+		}
+		
+		return materials;
+		
+	}	
+	//*************************************************************************
+	
+	public void displayMenu() {
+		
+		int menuNum = 0;
+		
+		do {
+			
+			System.out.println("<<플레이타임 공장>>");
+			System.out.println("1. 전체 장난감 조회하기");
+			System.out.println("2. 새로운 장난감 만들기");
+			System.out.println("3. 장난감 삭제하기");
+			System.out.println("4. 장난감 제조일 순으로 조회하기");
+			System.out.println("5. 연령별 사용 가능한 장난감 리스트 조회하기");
+			System.out.println("6. 재료 추가");
+			System.out.println("7. 재료 제거");
+			System.out.println("0. 프로그램 종료");
+			System.out.print("메뉴 선택 : ");
+			
+			try {
+				
+				menuNum = sc.nextInt();
+				
+				switch(menuNum) {
+				
+				case 1 : displayAllToy(); break;
+				case 2 : addToy(); break;
+				case 3 : deleteToy(); break;
+				case 4 : break;
+				case 5 : break;
+				case 6 : break;
+				case 7 : break;
+				case 0 : break;
+				default : 
+				
+				}
+				
+			} catch(InputMismatchException e) {
+				System.out.println("Error : 입력방식이 올바르지 않습니다. 다시 입력해주세요.");
+				sc.nextLine();
+				menuNum = -1;
+			}
+			
+		} while(menuNum != 0);
+		
+	}
+	
+	public void displayAllToy() {
+		
+		System.out.println("<전체 장난감 목록>");
+		
+		int index = 1;
+		
+		for(Toy toys : toySet) {
+			
+			System.out.println(index + ". " + toys);
+			index++;
+		}
+		
+	}
+	
+	public void addToy() {
+		
+		System.out.println("<새로운 장난감 추가>");
+		System.out.print("장난감 이름 : ");
+		String name = sc.next();
+		
+		for(Toy toys : toySet) {
+			
+			if(toys.getName().equals(name)) {
+				System.out.println("해당 장난감은 이미 존재합니다.");
+				return;
+			}
+		}
+		
+		System.out.print("사용 가능 연령 : ");
+		int age = sc.nextInt();
+		
+		System.out.print("가격 : ");
+		int price = sc.nextInt();
+		
+		System.out.print("색상 : ");
+		String color = sc.next();
+		
+		System.out.print("제조일 (YYYYMMDD 형식으로 입력) : ");
+		String manufactureDate = sc.next();
+		
+		Set<String> materialList = new HashSet<String>();
+		
+		
+		while(true) {
+			
+			
+			System.out.print("재료를 입력하세요 (종료하려면 'q'를 입력하세요):");
+			String input = sc.next();
+			
+			
+			if(input.charAt(0) == 'q' || input.charAt(0) == 'Q') {
+				
+				System.out.println("새로운 장난감이 추가되었습니다.");
+				break;
+				
+			} else {
+				materialList.add( input );
+			}
+			
+		}
+		
+		toySet.add( new Toy(name, age, price, color, manufactureDate, materialList) );
+		
+	}
+	
+	public void deleteToy() {
+		
+		System.out.print("삭제할 장난감의 이름을 입력하세요 : ");
+		String name = sc.next();
+		
+		List<Toy> toyList = new ArrayList<Toy>(toySet);
+		
+		boolean flag = false;
+		
+		for(Toy toys : toyList) {
+			
+			if(toys.getName().equals(name)) {
+				flag = true;
+				toySet.remove(toys);
+				System.out.println("장난감이 삭제되었습니다.");
+			} 
+		}
+		
+		if(!flag) {
+			System.out.println("입력하신 이름의 장난감이 존재하지 않습니다.");
+		}
+	}
+	
+	public void displaySortByDate() {
+		
+		System.out.println("<제조일 순으로 장난감을 정렬>");
+		
+		
+		
 	}
 	
 }

@@ -46,7 +46,7 @@ public class ToyFactorySolution {
 		for(Integer materialKey : newMaterials) {		// 매개변수에 들어가는 재료의 수에 따라 반복
 														// 
 			
-			// 맵에서 해당 번호(key)에 대응하는 재료를 가져와 추가 Map.get(key) 사용?
+			// 맵에서 해당 번호(key)에 해당하는 재료를 가져와 추가 Map.get(key) 사용?
 			String materialValue = materialMap.get(materialKey);
 			
 			if(materialValue != null) {
