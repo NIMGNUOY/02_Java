@@ -1,11 +1,13 @@
 package com.hw4.model.service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -93,11 +95,11 @@ public class ToyFactory {
 				case 1 : displayAllToy(); break;
 				case 2 : addToy(); break;
 				case 3 : deleteToy(); break;
-				case 4 : break;
-				case 5 : break;
-				case 6 : break;
-				case 7 : break;
-				case 0 : break;
+				case 4 : displaySortByDate(); break;
+				case 5 : displayToysByAge(); break;
+				case 6 : addMaterial(); break;
+				case 7 : deleteMaterial(); break;
+				case 0 : System.out.println("프로그램 종료"); break;
 				default : 
 				
 				}
@@ -182,11 +184,14 @@ public class ToyFactory {
 		System.out.print("삭제할 장난감의 이름을 입력하세요 : ");
 		String name = sc.next();
 		
-		List<Toy> toyList = new ArrayList<Toy>(toySet);
+		List<Toy> toyList = new ArrayList<Toy>(toySet);	// Set 형식의 toySet 컬렉션을 List 화
 		
 		boolean flag = false;
 		
-		for(Toy toys : toyList) {
+		for(Toy toys : toyList) {	// toySet 을 돌릴 경우 ConcurrentModificationException
+									// 예외 발생
+									// 인덱스로 접근하는데, 중간에 리스트의 사이즈가 변해 
+									// 의도한대로 접근할 수 없었기 때문.
 			
 			if(toys.getName().equals(name)) {
 				flag = true;
@@ -204,10 +209,128 @@ public class ToyFactory {
 		
 		System.out.println("<제조일 순으로 장난감을 정렬>");
 		
+		List<Toy> sortByManufactureDate = new ArrayList<Toy>(toySet);
 		
+		sortByManufactureDate.sort(Comparator.comparing(Toy::getManufactureDate));
+		
+		int index = 1;
+		
+		for(Toy toys : sortByManufactureDate) {
+			
+			System.out.println(index + ". " + toys);
+			index++;
+			
+		}
 		
 	}
 	
+	
+	public void displayToysByAge() {
+		
+		System.out.println("<연령별로 사용 가능한 장난감>");
+		
+		Map<Integer, List<Toy>> map = new HashMap<Integer, List<Toy>>();
+		
+		for(Toy toys : toySet) {
+			
+			int age = toys.getAge();
+			
+			map.putIfAbsent(age, new ArrayList<>());
+			
+			map.get(age).add(toys);
+			
+		}
+		
+		// 출력
+		for(Entry<Integer, List<Toy>> entry : map.entrySet()) {
+			
+			int age = entry.getKey();
+			
+			List<Toy> list = entry.getValue();
+			
+			System.out.println("[연령 : " + age + "세]");
+			int index = 1;
+			
+			for(Toy toys : list) {
+				System.out.println(index + ". " + toys);
+				index++;
+			}
+			
+		}
+		
+	}
+	
+	public void addMaterial() {
+		
+		System.out.println("<재료 추가>");
+		System.out.println("=== 현재 등록된 재료 ===");
+		
+		for(Entry<Integer, String> entry : materialName.entrySet()) {
+			
+			System.out.println(entry.getKey() + ". " + entry.getValue());
+		}
+		
+		System.out.println("========================");
+		
+		System.out.print("재료 고유번호(key) 입력: ");
+		int key = sc.nextInt();
+		
+		System.out.print("재료명 입력 : ");
+		String name = sc.next();
+		
+		if(materialName.containsKey(key)) {	// containsKey() , containsValue
+			
+			System.out.println("이미 해당 키에 재료가 등록되어 있습니다.");
+			System.out.print("덮어쓰시겠습니까?(y/n) : ");
+			String answer = sc.next();
+			
+			if(answer.equalsIgnoreCase("Y")) {
+				materialName.put(key, name);
+				System.out.println("재료가 성공적으로 덮어쓰기 되었습니다.");
+			} else if (answer.equalsIgnoreCase("N")){
+				System.out.println("재료 덮어쓰기를 취소하였습니다.");
+			}
+			
+		} else {
+			materialName.put(key, name);
+			System.out.println("새로운 재료가 성공적으로 등록되었습니다.");
+		}
+		
+	}
+	
+	public void deleteMaterial() {
+		
+		System.out.println("<재료 삭제>");
+		System.out.println("=== 현재 등록된 재료 ===");
+		
+		for(Entry<Integer, String> entry : materialName.entrySet()) {
+			
+			System.out.println(entry.getKey() + " : " + entry.getValue());
+			
+		}
+		
+		System.out.println("========================");
+		
+		System.out.print("삭제할 재료명 입력 : ");
+		String name = sc.next();
+		
+		boolean flag = false;
+		
+		for(Entry<Integer, String> entry : materialName.entrySet()) {
+			
+			if(entry.getValue().equals(name)) {
+				
+				flag = true;
+				materialName.remove(entry.getKey());
+				System.out.println("재료가 성공적으로 제거되었습니다");
+				break;		// 이거 없으면 안됨
+			}
+			
+		}
+		if(!flag) {
+			System.out.println("재료제거 실패");
+		}
+	}
 }
 
 

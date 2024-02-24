@@ -236,7 +236,7 @@ public class ToyFactorySolution {
 			// 				해당 키가 존재하지 않는 경우에만 전달받은 값을 추가
 			// -> 맵에 해당 연령의 리스트가 없는 경우에만 새로운 리스트를 생성하여 추가
 			
-			toysByAge.get(age).add(toy);
+			toysByAge.get(age).add(toy);	// ?
 			
 		}
 		
