@@ -1,6 +1,6 @@
 package com.hw4.model.dto;
 
-import java.util.Objects;
+
 import java.util.Set;
 
 public class Toy {
@@ -10,18 +10,18 @@ public class Toy {
 	private int price;
 	private String color;
 	private String manufactureDate;
-	private Set<String> materials;
-	
+	private Set<String> material;
+
 	public Toy() {}
 
-	public Toy(String name, int age, int price, String color, String manufactureDate, Set<String> materials) {
+	public Toy(String name, int age, int price, String color, String manufactureDate, Set<String> material) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.price = price;
 		this.color = color;
 		this.manufactureDate = manufactureDate;
-		this.materials = materials;
+		this.material = material;
 	}
 
 	public String getName() {
@@ -65,49 +65,30 @@ public class Toy {
 	}
 
 	public Set<String> getMaterial() {
-		return materials;
+		return material;
 	}
 
 	public void setMaterial(Set<String> material) {
-		this.materials = material;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(age, color, manufactureDate, materials, name, price);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Toy other = (Toy) obj;
-		return age == other.age && Objects.equals(color, other.color)
-				&& Objects.equals(manufactureDate, other.manufactureDate) && Objects.equals(materials, other.materials)
-				&& Objects.equals(name, other.name) && price == other.price;
+		this.material = material;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("이름 : %s / 가격 : %d / 색상 : %s / 사용가능연령 : %d / 제조년월일 : %s / 재료 : %s", 
-							name, price, color, age, manufactureDate, materials() );
+		return "이름 : " + name + " / 가격 : " + price + " / 색상 : " + color + " / 사용가능연령 : " + age
+				+ " / 제조년월일 : " + manufactureDate + " / 재료 : " + materials();
 	}
-	
 	
 	public String materials() {
 		
 		StringBuilder sb = new StringBuilder();
 		
-		for(String material : materials) {	// materials 의 자료형은 Set<String> 이기 때문에 배열형식(?)
+		for(String materialList : material) {
 			
-			sb.append(material).append(", ");
+			sb.append(materialList).append(", ");
+			
 		}
 		
-		if(sb.length() > 0) {
+		if(sb.length() > 0 ) {
 			
 			sb.setLength(sb.length() - 2);
 			
@@ -115,7 +96,8 @@ public class Toy {
 		
 		return sb.toString();
 	}
-
+	
+	
 }
 
 	
