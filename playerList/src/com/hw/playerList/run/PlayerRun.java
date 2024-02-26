@@ -9,6 +9,7 @@ public class PlayerRun {
 		
 		PlayerView pv = new PlayerView();
 		
+		pv.startMenu();
 	}
 	
 }
