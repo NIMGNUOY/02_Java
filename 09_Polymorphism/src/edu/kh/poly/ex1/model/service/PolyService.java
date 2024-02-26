@@ -30,7 +30,7 @@ public class PolyService {
 		
 		// ******** 다형성 (업캐스팅) 작성 방법 *********
 		
-		// 1) 자식 객체가 부모 객체로 변하였기 때무넹
+		// 1) 자식 객체가 부모 객체로 변하였기 때문에
 		//	 자식만의 고유한 필드, 메서드를 사용할 수 없다
 		
 		// 1-1) car (부모 = 부모)
@@ -160,6 +160,7 @@ public class PolyService {
 		
 		Car c1 = new Tesla("전기모터", "전기", 4, 1000000);
 		// 업캐스팅 (부모타입 변수 = 자식 객체)
+		
 		
 		System.out.println( ((Tesla)c1).getBatteryCapacity() );
 		// ** 주의 **

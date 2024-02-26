@@ -80,7 +80,7 @@ public class Toy {
 	
 	public String materials() {
 		
-		StringBuilder sb = new StringBuilder();
+		StringBuilder sb = new StringBuilder();	// 가변성
 		
 		for(String materialList : material) {
 			
@@ -90,7 +90,7 @@ public class Toy {
 		
 		if(sb.length() > 0 ) {
 			
-			sb.setLength(sb.length() - 2);
+			sb.setLength(sb.length() - 2);	// 마지막 ", " 지우는 코드
 			
 		}
 		

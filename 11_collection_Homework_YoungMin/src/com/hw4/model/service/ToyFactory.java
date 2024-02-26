@@ -53,7 +53,7 @@ public class ToyFactory {
 	}
 	
 	public Set<String> materials(Integer...addMaterial) {
-		
+		  
 		Set<String> newMaterial = new HashSet<String>();
 		
 		for(Integer materialNum : addMaterial) {
@@ -208,13 +208,14 @@ public class ToyFactory {
 		
 		int index = 1;
 		
-		List<Toy> toyList = new ArrayList<Toy>(toySet);
+		List<Toy> toyList = new ArrayList<Toy>(toySet);	// List 화 
 		
-		toyList.sort(Comparator.comparing(Toy::getManufactureDate));
+		
+		toyList.sort(Comparator.comparing(Toy::getManufactureDate));	// 정렬
 		
 		for(Toy toys : toyList) {
 			
-			System.out.println(index + ". " + toys);
+			System.out.println(index + ". " + toys);	// 출력
 			index++;
 			
 		}
@@ -233,7 +234,7 @@ public class ToyFactory {
 			
 			toyMap.putIfAbsent(age, new ArrayList<Toy>());
 			
-			toyMap.get(age).add(toys);
+			toyMap.get(age).add(toys);	// toyMap.get(age) == new ArrayList<Toy>()
 		}
 		
 		
@@ -272,7 +273,7 @@ public class ToyFactory {
 		System.out.print("재료명 입력 : ");
 		String name = sc.next();
 		
-		if(materialMap.containsKey(key)) {
+		if(materialMap.containsKey(key)) {	// 반복문 돌릴 필요 X
 			
 			System.out.println("이미 해당 키에 재료가 등록되어 있습니다.");
 			System.out.print("덮어쓰시겠습니까?(y/n) : ");

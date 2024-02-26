@@ -82,6 +82,29 @@ public class TodoListDAOImpl implements TodoListDAO {
 		
 		
 	}
+	
+	//-----------------------------------------------------------------------
+	/* saveFile */
+	
+	@Override
+	public void saveFile() throws Exception{
+		// todoList 를 파일로 저장하는 메서드
+		
+		try {
+			
+			// FILE_PATH 경로에 있는 파일과 연결된 객체 출력 스트림 생성
+			oos = new ObjectOutputStream( new FileOutputStream( FILE_PATH ) );
+			oos.writeObject( todoList );	// todoList 출력
+			
+		} finally {
+			
+			oos.close();
+		}
+		
+		
+	}
+	
+	//-----------------------------------------------------------------------
 
 	
 	
@@ -89,7 +112,103 @@ public class TodoListDAOImpl implements TodoListDAO {
 	public List<Todo> todoListFullView() {
 		return todoList;
 	}
+
+
+
+
+	@Override
+	public Todo todoDetailView(int index) {
+		
+		// 1. index 범위가 todoList 범위를 넘어가면 null 반환
+		if(  index < 0 || index >= todoList.size()  ) return null;
+		
+		// 2. index 가 정상 범위인 경우 index 번째 요소 반환
+		return todoList.get(index);
+		
+	}
+
+
+
+	@Override
+	public int todoAdd(Todo todo) throws Exception{
+		
+		// todoList 에 전달 받은 todo 를 추가
+		// -> 성공 시 파일에 저장(출력) 후 삽입된 index 를 반환
+		// -> 실패 시 -1 반환
+		
+		if( todoList.add( todo ) ) {
+			
+			// 파일 저장
+			saveFile();
+			
+			// 삽인된 index 반환
+			return todoList.size() - 1;
+			
+		}
+			
+		return -1;	// 추가 실패
+	}
+
+	@Override
+	public boolean todoComplete(int index) throws Exception{
+		
+		// 1. index 범위 초과시 false 반화
+		
+		if(index < 0 || index >= todoList.size()) return false;
+		
+		// 2. index 가 정상 범위인 경우
+		//   index 번째 요소의 complete 값을 변경하고
+		//   파일 저장 후 true 반환
+		
+		boolean complete = todoList.get(index).isComplete();	// true or false
+		
+		todoList.get(index).setComplete(!complete);
+		
+		saveFile();		// 파일 저장
+		
+		return true;
+	}
+
+	@Override
+	public boolean todoUpdate(int index, String title, String content) throws Exception{
+		
+		Todo todo = new Todo(title, 
+							content, 
+							todoList.get(index).isComplete(), 
+							todoList.get(index).getRegDate()
+							);
+		// index 번째 요소의 complete, regDate 값을 얻어와 todo 에 세팅
+		// 이전에 index 번째 요소가 가지고 있던 값을 가지고 옴
+		
+		// List.set(int index, E e) : 
+		// index 번째 요소를 매개변수 e 로 바꾸고 
+		// 이전 요소를 반환(이전 요소 없다면 null 반환)
+		
+		if( todoList.set( index, todo ) != null ) {	// 수정 성공
+			// 변경된 todo 저장
+			saveFile();
+			return true;
+		} 
+		
+		return false;
+		
+
+	}
 	
+	
+	@Override
+	public Todo todoDelete(int index) throws Exception {
+		
+		// index 범위 검사
+		if(index < 0 || index >= todoList.size()) return null;
+		
+		// todoList 에서 index 번째 요소 삭제 후 파일 저장
+		Todo todo = todoList.remove( index );	// 삭제된 Todo 객체 반환
+		
+		saveFile();
+		
+		return todo;
+	}
 }
 
 

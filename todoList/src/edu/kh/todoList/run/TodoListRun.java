@@ -8,7 +8,7 @@ public class TodoListRun {
 		
 		System.out.println("======= 프로그램 실행 =======");
 		
-		// 프로젝트 흐름
+		// 프로젝트 흐름(MVC 패턴)
 		// Run <-> View <-> Service <-> DAO <-> File
 		TodoListView view = new TodoListView();
 		

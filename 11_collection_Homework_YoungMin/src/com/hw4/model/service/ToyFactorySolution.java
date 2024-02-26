@@ -20,7 +20,7 @@ public class ToyFactorySolution {
 	private Map<Integer , String> materialMap = new HashMap<Integer, String>();
 	// 재료가 저장되어 있는 Map
 
-	public ToyFactorySolution() {
+	public ToyFactorySolution() {	// 기본 생성자
 		
 		// 기본 등록된 재료
 		materialMap.put(1, "면직물");
