@@ -1,11 +1,13 @@
-package com.hw.playerList.model.service;
+package com.hw.playerList.model.dao;
 
 import java.util.List;
 import java.util.Map;
 
 import com.hw.playerList.model.dto.Player;
 
-public interface PlayerService {
+public interface PlayerListDAO {
+	
+	void saveFile() throws Exception;
 
 	List<Player> displayAllPlayers();
 
@@ -13,7 +15,7 @@ public interface PlayerService {
 
 	Player updatePlayerInfo(int index) throws Exception;
 
-	boolean deletePlayer( int index ) throws Exception;
+	boolean deletePlayer(int index) throws Exception;
 
 	Map<String, List<Player>> sortByNationality();
 
