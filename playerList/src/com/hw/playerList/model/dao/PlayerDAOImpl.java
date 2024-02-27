@@ -87,12 +87,13 @@ public class PlayerDAOImpl implements PlayerDAO{
 	}
 
 
-	public Player addPlayer(String name) {
-		
-	return null;
-		
+	public void addPlayer(String name, int age, int backNum, String nationality, String team) {
+		// TODO Auto-generated method stub
 		
 	}
+
+
+	
 
 
 	

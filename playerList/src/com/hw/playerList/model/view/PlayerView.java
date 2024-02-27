@@ -112,7 +112,6 @@ public class PlayerView {
 		System.out.print("Name : ");
 		String name = br.readLine();
 		
-		Player player = service.addPlayer( name );
 		
 		System.out.print("Age : ");
 		int age = Integer.parseInt(br.readLine());
@@ -125,6 +124,10 @@ public class PlayerView {
 		
 		System.out.print("Team : ");
 		String team = br.readLine();
+		
+		Player player = service.addPlayer( name, age, backNum,
+									nationality, team);
+	
 		
 	}
 	

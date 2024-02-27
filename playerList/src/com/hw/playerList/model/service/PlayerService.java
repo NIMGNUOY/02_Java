@@ -10,6 +10,8 @@ public interface PlayerService {
 
 	public abstract Player DetailInformationForPlayer(int index) throws Exception;
 
-	public abstract Player addPlayer(String name);
+	public abstract Player addPlayer(String name, int age, int backNum, String nationality, String team);
+
+	
 	
 }

@@ -43,12 +43,14 @@ public class PlayerServiceImpl implements PlayerService{
 	}
 
 	@Override
-	public Player addPlayer(String name) {
+	public Player addPlayer(String name, int age, int backNum, String nationality, String team) {
 		
-		Player player = dao.addPlayer( name );
+		dao.addPlayer(name, age, backNum, nationality, team);
 		
 		return null;
 	}
+
+	
 
 }
 
