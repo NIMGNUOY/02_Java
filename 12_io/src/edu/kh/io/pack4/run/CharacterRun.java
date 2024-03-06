@@ -10,6 +10,7 @@ public class CharacterRun {
 		
 //		service.fileInput();
 //		service.fileOutput();
+		service.praticeIO();
 		
 	}
 	

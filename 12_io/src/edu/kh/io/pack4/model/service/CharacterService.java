@@ -1,9 +1,15 @@
 package edu.kh.io.pack4.model.service;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class CharacterService {
 
@@ -111,6 +117,32 @@ public class CharacterService {
 			
 		}
 		
+		
+	}
+	
+	public void praticeIO() {
+		
+		FileInputStream fis = null;
+		
+		try {
+			
+			fis = new FileInputStream("/io_test/practice/IO연습.dat");
+			
+			byte[] bytes = fis.readAllBytes();
+			
+			String content = new String(bytes);
+			
+			System.out.println(content);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(fis != null) fis.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
 	}
 }
